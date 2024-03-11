@@ -1,0 +1,65 @@
+@import '~/scss/mixins';
+@import '~/scss/variables';
+
+.Toggle__container {
+  cursor: pointer;
+  display: flex;
+  height: 24px;
+  line-height: 24px;
+  gap: 12px;
+  user-select: none;
+
+  input {
+    display: none;
+  }
+
+  &:hover {
+    .Toggle:not(:checked):not(:disabled) ~ .Toggle__control {
+      background-color: $gray;
+    }
+  }
+
+  &:focus,
+  &:active {
+    .Toggle:not(:checked):not(:disabled) ~ .Toggle__control {
+      background-color: $primary-9;
+    }
+  }
+}
+
+.Toggle {
+  &:checked ~ .Toggle__control {
+    background-color: $primary-9;
+  }
+
+  &:checked ~ .Toggle__control:before {
+    content: '';
+    left: auto;
+    right: 2px;
+  }
+
+  &:disabled ~ .Toggle__control {
+    background-color: $oc-gray-5;
+    cursor: not-allowed;
+  }
+}
+
+.Toggle__control {
+  background-color: $border;
+  border-radius: 1rem;
+  height: 24px;
+  width: 44px;
+  position: relative;
+  transition: all 0.1s ease-in-out;
+
+  &:before {
+    background-color: white;
+    border-radius: 100%;
+    content: '';
+    height: 20px;
+    left: 2px;
+    position: absolute;
+    top: 2px;
+    width: 20px;
+  }
+}

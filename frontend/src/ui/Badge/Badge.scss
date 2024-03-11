@@ -1,0 +1,67 @@
+@import '~/scss/mixins';
+@import '~/scss/variables';
+
+$colors: (
+  'primary': (
+    'background-color': $primary-1,
+    'color': $primary-9,
+  ),
+  'red': (
+    'background-color': $oc-red-1,
+    'color': $oc-red-8,
+  ),
+  'orange': (
+    'background-color': $oc-orange-1,
+    'color': $oc-orange-8,
+  ),
+  'yellow': (
+    'background-color': $oc-yellow-1,
+    'color': $oc-yellow-8,
+  ),
+  'green': (
+    'background-color': $oc-green-1,
+    'color': $oc-green-8,
+  ),
+  'blue': (
+    'background-color': $oc-blue-1,
+    'color': $oc-blue-8,
+  ),
+  'indigo': (
+    'background-color': $oc-indigo-1,
+    'color': $oc-indigo-8,
+  ),
+  'violet': (
+    'background-color': $oc-violet-1,
+    'color': $oc-violet-8,
+  ),
+);
+
+.Badge {
+  @include bold;
+  align-items: center;
+  background-color: $oc-gray-1;
+  border-radius: 1rem;
+  color: $oc-gray-8;
+  cursor: pointer;
+  display: flex;
+  font-size: 0.75rem;
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  width: fit-content;
+
+  .material-icons,
+  .material-symbols,
+  .material-symbols-outlined {
+    font-size: 16px;
+    margin-right: 2px;
+  }
+}
+
+// Colors
+
+@each $name, $values in $colors {
+  .Badge--#{$name} {
+    background-color: map-get($values, 'background-color');
+    color: map-get($values, 'color');
+  }
+}

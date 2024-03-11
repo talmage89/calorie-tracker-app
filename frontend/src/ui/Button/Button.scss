@@ -1,0 +1,238 @@
+@import '~/scss/mixins';
+@import '~/scss/variables';
+
+$colors: (
+  'primary': (
+    'main': $primary-9,
+    'text': white,
+    'hover': $primary-0,
+    'active': $primary-1,
+  ),
+  'red': (
+    'main': $oc-red-9,
+    'text': white,
+    'hover': $oc-red-0,
+    'active': $oc-red-1,
+  ),
+  'orange': (
+    'main': $oc-orange-9,
+    'text': white,
+    'hover': $oc-orange-0,
+    'active': $oc-orange-1,
+  ),
+  'yellow': (
+    'main': $oc-yellow-6,
+    'text': black,
+    'hover': $oc-yellow-0,
+    'active': $oc-yellow-1,
+  ),
+  'green': (
+    'main': $oc-green-9,
+    'text': white,
+    'hover': $oc-green-0,
+    'active': $oc-green-1,
+  ),
+  'blue': (
+    'main': $oc-blue-9,
+    'text': white,
+    'hover': $oc-blue-0,
+    'active': $oc-blue-1,
+  ),
+  'indigo': (
+    'main': $oc-indigo-9,
+    'text': white,
+    'hover': $oc-indigo-0,
+    'active': $oc-indigo-1,
+  ),
+  'violet': (
+    'main': $oc-violet-9,
+    'text': white,
+    'hover': $oc-violet-0,
+    'active': $oc-violet-1,
+  ),
+);
+
+@mixin button-base {
+  @include bold;
+  @include sans;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  border-radius: 4px;
+  color: $gray-dk;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none !important;
+  transition: all 0.1s ease-in-out;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  .material-icons {
+    display: block;
+  }
+
+  &.Button--fluid {
+    width: 100%;
+  }
+
+  &.Button--size--sm {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+  }
+
+  &.Button--size--lg {
+    font-size: 1.25rem;
+    padding: 0.75rem 1.25rem;
+  }
+
+  &.Button--iconLeading {
+    padding-left: 2.5rem !important;
+
+    .iconLeading {
+      font-size: 1.25rem;
+      left: 0;
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      transform: translate(50%, -50%);
+    }
+  }
+
+  &.Button--iconTrailing {
+    padding-right: 2.5rem !important;
+
+    .iconTrailing {
+      font-size: 1.25rem;
+      margin: 0;
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.Button--rounded {
+    border-radius: 2rem !important;
+  }
+}
+
+// Default variant
+
+.Button--variant--default {
+  @include button-base;
+
+  &:hover {
+    background-color: $oc-gray-0;
+  }
+
+  &:active {
+    background-color: $oc-gray-1;
+  }
+
+  &:disabled {
+    color: $oc-gray-5 !important;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    &:active {
+      background-color: transparent !important;
+    }
+  }
+
+  // colors
+
+  @each $name, $values in $colors {
+    &.Button--color--#{$name} {
+      color: map-get($values, 'main');
+
+      &:hover {
+        background-color: map-get($values, 'hover');
+      }
+
+      &:active {
+        background-color: map-get($values, 'active');
+      }
+    }
+  }
+}
+
+// Outlined variant
+
+.Button--variant--outlined {
+  @include button-base;
+  background-color: transparent;
+  border: 1px solid $gray-dk;
+  color: $gray-dk;
+
+  &:hover {
+    background-color: $oc-gray-0;
+  }
+
+  &:active {
+    background-color: $oc-gray-1;
+  }
+
+  &:disabled {
+    color: $oc-gray-5 !important;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    &:active {
+      background-color: transparent !important;
+    }
+  }
+
+  // colors
+
+  @each $name, $values in $colors {
+    &.Button--color--#{$name} {
+      border-color: map-get($values, 'main');
+      color: map-get($values, 'main');
+
+      &:hover {
+        background-color: map-get($values, 'hover');
+      }
+
+      &:active {
+        background-color: map-get($values, 'active');
+      }
+    }
+  }
+}
+
+// Raised variant
+
+.Button--variant--raised {
+  @include button-base;
+
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
+
+  &:active {
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
+  }
+
+  &:disabled {
+    background-color: $oc-gray-0 !important;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25) !important;
+    color: $oc-gray-5 !important;
+  }
+
+  // colors
+
+  @each $name, $values in $colors {
+    &.Button--color--#{$name} {
+      background-color: map-get($values, 'main');
+      color: map-get($values, 'text');
+    }
+  }
+}

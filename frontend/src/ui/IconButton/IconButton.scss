@@ -1,0 +1,120 @@
+@import '~/scss/mixins';
+@import '~/scss/variables';
+
+$colors: (
+  'primary': (
+    'main': $primary-9,
+    'hover': $primary-0,
+    'active': $primary-1,
+  ),
+  'red': (
+    'main': $oc-red-9,
+    'hover': $oc-red-0,
+    'active': $oc-red-1,
+  ),
+  'orange': (
+    'main': $oc-orange-9,
+    'hover': $oc-orange-0,
+    'active': $oc-orange-1,
+  ),
+  'yellow': (
+    'main': $oc-yellow-6,
+    'hover': $oc-yellow-0,
+    'active': $oc-yellow-1,
+  ),
+  'green': (
+    'main': $oc-green-9,
+    'hover': $oc-green-0,
+    'active': $oc-green-1,
+  ),
+  'blue': (
+    'main': $oc-blue-9,
+    'hover': $oc-blue-0,
+    'active': $oc-blue-1,
+  ),
+  'indigo': (
+    'main': $oc-indigo-9,
+    'hover': $oc-indigo-0,
+    'active': $oc-indigo-1,
+  ),
+  'violet': (
+    'main': $oc-violet-9,
+    'hover': $oc-violet-0,
+    'active': $oc-violet-1,
+  ),
+);
+
+@mixin icon-button-base {
+  @include bold;
+  @include sans;
+  appearance: none;
+  background-color: transparent;
+  border: 1px solid transparent;
+  border-radius: 100%;
+  color: $gray-dk;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 18px;
+  height: 40px;
+  line-height: 40px;
+  padding: 0;
+  position: relative;
+  max-height: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  min-width: 40px;
+  text-align: center;
+  text-decoration: none !important;
+  transition: all 0.1s ease-in-out;
+  width: 40px;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  .material-icons {
+    display: block;
+  }
+}
+
+.IconButton {
+  @include icon-button-base;
+}
+
+.IconButton {
+  &:hover {
+    background-color: $oc-gray-0;
+  }
+
+  &:active {
+    background-color: $oc-gray-1;
+  }
+
+  &:disabled {
+    color: $oc-gray-5 !important;
+
+    &:hover {
+      background-color: transparent !important;
+    }
+
+    &:active {
+      background-color: transparent !important;
+    }
+  }
+}
+
+.IconButton {
+  @each $name, $values in $colors {
+    &.IconButton--color--#{$name} {
+      color: map-get($values, 'main');
+
+      &:hover {
+        background-color: map-get($values, 'hover');
+      }
+
+      &:active {
+        background-color: map-get($values, 'active');
+      }
+    }
+  }
+}

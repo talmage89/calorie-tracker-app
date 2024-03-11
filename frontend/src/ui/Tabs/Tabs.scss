@@ -1,0 +1,34 @@
+@import '~/scss/mixins';
+@import '~/scss/variables';
+
+.Tabs {
+  align-items: center;
+  display: flex;
+  overflow-x: hidden;
+
+  &__container {
+    position: relative;
+  }
+
+  &__navigate {
+    align-items: center;
+    appearance: none;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    width: 40px;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+}

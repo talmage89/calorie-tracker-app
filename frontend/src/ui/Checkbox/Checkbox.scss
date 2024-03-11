@@ -1,0 +1,65 @@
+@import '~/scss/mixins';
+@import '~/scss/variables';
+
+.Checkbox__container {
+  cursor: pointer;
+  display: block;
+  min-height: 24px;
+  line-height: 24px;
+  margin-bottom: 0.5rem;
+  padding-left: 2.5rem;
+  position: relative;
+  user-select: none;
+
+  input {
+    display: none;
+  }
+
+  &:hover {
+    .Checkbox:not(:checked):not(:disabled) ~ .Checkbox__mark {
+      border-color: $gray;
+    }
+  }
+
+  &:focus,
+  &:active {
+    .Checkbox:not(:checked):not(:disabled) ~ .Checkbox__mark {
+      border-color: $primary-9;
+    }
+  }
+}
+
+.Checkbox {
+  &:checked ~ .Checkbox__mark {
+    border-color: $primary-9;
+  }
+
+  &:checked ~ .Checkbox__mark:after {
+    border-left: 2px solid $primary-9;
+    border-bottom: 2px solid $primary-9;
+    content: '';
+    height: 6px;
+    width: 12px;
+    position: absolute;
+    top: 6px;
+    left: 4px;
+    transform: rotate(-45deg);
+  }
+
+  &:disabled ~ .Checkbox__mark {
+    border-color: $oc-gray-5;
+    cursor: not-allowed;
+  }
+}
+
+.Checkbox__mark {
+  border: 2px solid $border;
+  border-radius: 4px;
+  color: $primary-9;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all 0.1s ease-in-out;
+}

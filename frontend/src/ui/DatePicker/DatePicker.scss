@@ -1,0 +1,61 @@
+@import '~/scss/mixins';
+@import '~/scss/variables';
+
+.DatePicker {
+  &__container {
+    position: relative;
+  }
+
+  &__navigation {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__month {
+    margin: 0 1rem;
+  }
+  &__calendar {
+    margin: 1rem 0;
+
+    table {
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: 100%;
+
+      thead {
+        th {
+          @include bold;
+          color: $gray;
+          font-size: 14px;
+        }
+      }
+
+      tbody {
+        td {
+          color: $gray-dk;
+          cursor: pointer;
+          font-size: 12px;
+          padding: 0.5rem 0;
+          text-align: center;
+        }
+      }
+    }
+  }
+  &__selected {
+    color: white !important;
+    position: relative;
+
+    &:before {
+      background-color: $primary-9;
+      border-radius: 100%;
+      content: '';
+      display: block;
+      height: 30px;
+      width: 30px;
+      position: absolute;
+      top: calc(50% - 15px);
+      left: calc(50% - 15px);
+      z-index: -1;
+    }
+  }
+}

@@ -1,0 +1,38 @@
+@import '~/scss/mixins';
+@import '~/scss/variables';
+
+.Drawer {
+  animation: slideInRight 0.4s;
+  background-color: white;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  min-width: 24rem;
+  z-index: 101;
+
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+
+    &--bg {
+      backdrop-filter: blur(4px);
+      background-color: rgba(107, 114, 128, 0.75);
+    }
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(100vw);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

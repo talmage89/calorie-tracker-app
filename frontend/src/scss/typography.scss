@@ -1,0 +1,47 @@
+// General typographic rules
+html,
+body {
+  @include normal;
+  @include sans;
+  color: $gray-dk;
+  font-size: 16px; // If you change this value, you'll want to change the $rem-base variable in functions.scss
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+h5 {
+  font-size: 14px;
+}
+
+h6 {
+  font-size: 12px;
+}
+
+.error {
+  @include bold;
+  color: $oc-red-9;
+  font-size: 14px;
+}
+
+.hint {
+  @include normal;
+  font-size: 12px;
+}
+
+// Icon fonts
+$font-path: '../assets/fonts';

@@ -1,0 +1,95 @@
+@import '~/scss/variables';
+
+.Dialog {
+  animation: scaleIn 0.6s;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.25);
+  padding: 1.5rem;
+  margin: auto;
+  min-width: 16rem;
+
+  &::backdrop {
+    background-color: transparent;
+  }
+
+  &--backdrop {
+    &::backdrop {
+      background-color: rgba($oc-gray-9, 0.7) !important;
+    }
+  }
+
+  &__close {
+    position: absolute !important;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+
+  @keyframes scaleIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes slideInTop {
+    0% {
+      transform: translateY(-100vh);
+    }
+
+    70% {
+      transform: translateY(5vh);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes slideInBottom {
+    0% {
+      transform: translateY(100vh);
+    }
+
+    70% {
+      transform: translateY(-5vh);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  @keyframes slideInLeft {
+    0% {
+      transform: translateX(-100vw);
+    }
+
+    70% {
+      transform: translateX(5vw);
+    }
+
+    100% {
+      transform: translateX(0px);
+    }
+  }
+
+  @keyframes slideInRight {
+    0% {
+      transform: translateX(100vw);
+    }
+
+    70% {
+      transform: translateX(-5vw);
+    }
+
+    100% {
+      transform: translateX(0px);
+    }
+  }
+}

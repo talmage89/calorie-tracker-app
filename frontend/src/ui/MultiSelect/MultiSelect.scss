@@ -1,0 +1,12 @@
+@import '~/scss/mixins';
+@import '~/scss/variables';
+
+.MultiSelect {
+  position: relative;
+
+  &__popover {
+    @include scrollbar;
+    max-height: 24rem;
+    overflow-y: auto;
+  }
+}
