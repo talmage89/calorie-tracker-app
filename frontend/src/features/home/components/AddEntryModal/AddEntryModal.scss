@@ -1,0 +1,55 @@
+@import 'src/scss/variables.scss';
+
+.AddEntryModal {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    &__input {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &__newFoodForm {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &__header {
+      font-weight: bold;
+    }
+
+    &__input {
+      display: flex;
+      justify-content: space-between;
+
+      & > p {
+        font-size: 0.9rem;
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+
+    &__button {
+      width: fit-content;
+      align-self: flex-end;
+    }
+  }
+
+  &__buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+}

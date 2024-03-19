@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "vite",
-    "build": "vite build",
+    "build": "vite build --outDir=../backend/core/dist --emptyOutDir --base=/",
     "preview": "vite preview",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +16,7 @@
     "axios": "^1.6.7",
     "clsx": "^2.1.0",
     "date-fns": "^3.3.1",
+    "solid-icons": "^1.1.0",
     "solid-js": "^1.8.15"
   },
   "devDependencies": {

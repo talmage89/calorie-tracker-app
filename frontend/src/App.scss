@@ -1,22 +1,14 @@
-@import './scss/functions';
-@import './scss/open-color';
-@import './scss/variables';
-@import './scss/mixins';
-@import './scss/defaults';
-@import './scss/typography';
-@import './scss/utils';
+@import 'src/scss/defaults.scss';
+@import 'src/scss/typography.scss';
+@import 'src/scss/utils.scss';
 
 body {
-  @include scrollbar;
-}
-
-a {
-  color: $primary-9;
+  margin: 0;
+  padding: 0;
 }
 
 hr {
   border: none;
-  border-top: 1px solid $border;
   margin: 0.5rem 0;
 }
 

@@ -1,54 +1,42 @@
-import { useNavigate } from '@solidjs/router';
 import { createSignal } from 'solid-js';
-import { http } from '~/http';
-import { Button, Input } from '~/ui';
-import { setUser } from '../../services/UserService';
+
+type LoginFormProps = {
+  onSubmit: (data: LoginFormData) => void;
+}
 
 export type LoginFormData = {
-  username: string;
+  email: string;
   password: string;
 };
 
-export const LoginForm = () => {
+export const LoginForm = (props: LoginFormProps) => {
   const [form, setForm] = createSignal<LoginFormData>({
-    username: '',
+    email: '',
     password: '',
   });
 
-  const navigate = useNavigate();
-
   function onSubmit(e: Event) {
     e.preventDefault();
-    http
-      .post('/api/token-auth/', form())
-      .then((res) => {
-        setUser(res.data.user);
-        navigate('/');
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    props.onSubmit(form());
   }
 
   return (
     <>
       <form onSubmit={onSubmit}>
-        <Input
-          fluid
-          name="username"
+        <input
+          name="email"
           onChange={(e) => {
             setForm({
               ...form(),
-              username: e.target.value,
+              email: e.target.value,
             });
           }}
-          placeholder="Email"
+          placeholder="email"
           type="email"
-          value={form().username}
+          value={form().email}
         />
-        <Input
+        <input
           class="mt-4"
-          fluid
           name="password"
           onChange={(e) => {
             setForm({
@@ -60,16 +48,9 @@ export const LoginForm = () => {
           type="password"
           value={form().password}
         />
-        <Button
-          class="mt-4"
-          color="primary"
-          disabled={!form().username || !form().password}
-          fluid
-          type="submit"
-          variant="raised"
-        >
-          Login
-        </Button>
+        <button class="mt-4" disabled={!form().email || !form().password} type="submit">
+          Submit
+        </button>
       </form>
     </>
   );

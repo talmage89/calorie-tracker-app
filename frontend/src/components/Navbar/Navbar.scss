@@ -1,0 +1,31 @@
+@import 'src/scss/variables.scss';
+
+.Navbar {
+  width: 100%;
+  padding: 1rem 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__logo {
+    a {
+      color: $brown-500;
+      font-weight: bold;
+      font-size: 3rem;
+      text-decoration: none;
+      font-family: "Madimi One", sans-serif;
+    }
+  }
+
+  &__links {
+  }
+}

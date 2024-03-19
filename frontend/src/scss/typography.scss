@@ -1,11 +1,13 @@
 // General typographic rules
 html,
 body {
-  @include normal;
-  @include sans;
-  color: $gray-dk;
+  color: black;
   font-size: 16px; // If you change this value, you'll want to change the $rem-base variable in functions.scss
   line-height: 1.5;
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 
 h1 {
@@ -33,13 +35,11 @@ h6 {
 }
 
 .error {
-  @include bold;
-  color: $oc-red-9;
+  color: red;
   font-size: 14px;
 }
 
 .hint {
-  @include normal;
   font-size: 12px;
 }
 

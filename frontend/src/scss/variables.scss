@@ -1,20 +1,19 @@
-@import './open-color';
-// colors
+$gray-100: #e0e0e0;
+$gray-200: #c6c6c6;
+$gray-300: #acacac;
+$gray-400: #919191;
+$gray-500: #777777;
+$gray-600: #5c5c5c;
+$gray-700: #424242;
+$gray-800: #282828;
+$gray-900: #000000;
 
-// NOTE: Search project-wide to see where colors are used before deleting them.
-$gray-dk: $oc-gray-9;
-$gray: $oc-gray-6;
-$gray-lt: $oc-gray-4;
-
-$border: $gray-lt;
-
-$primary-0: $oc-blue-0;
-$primary-1: $oc-blue-1;
-$primary-2: $oc-blue-2;
-$primary-3: $oc-blue-3;
-$primary-4: $oc-blue-4;
-$primary-5: $oc-blue-5;
-$primary-6: $oc-blue-6;
-$primary-7: $oc-blue-7;
-$primary-8: $oc-blue-8;
-$primary-9: $oc-blue-9;
+$brown-100: #e5cdc7;
+$brown-200: #cc9b8f;
+$brown-300: #b26957;
+$brown-400: #9a5747;
+$brown-500: #8c4f40;
+$brown-600: #703f33;
+$brown-700: #543027;
+$brown-800: #462820;
+$brown-900: #38201a;

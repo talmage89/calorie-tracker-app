@@ -1,3 +1,5 @@
+import { Profile } from "../profile/types";
+
 export type User = {
   id: string;
   last_login: string | null;
@@ -13,4 +15,5 @@ export type User = {
   is_verified: boolean;
   groups: any[];
   user_permissions: any[];
+  profile: Profile
 };

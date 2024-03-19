@@ -1,19 +1,14 @@
-@import '~/scss/mixins';
-@import '~/scss/variables';
+@import 'src/scss/variables.scss';
 
 @mixin input-base {
-  @include sans;
   background: transparent;
-  border: 2px solid $border;
+  border: 2px solid $gray-300;
   border-radius: 4px;
   font-size: 1rem;
   outline: none;
   padding: 0.5rem 1rem;
   transition: all 0.1s ease-in-out;
-
-  @include placeholder {
-    color: $oc-gray-6;
-  }
+  background-color: white;
 
   &:disabled {
     cursor: not-allowed;
@@ -23,28 +18,10 @@
     width: 100%;
   }
 
-  &.Input--iconLeading {
-    padding-left: 2.5rem !important;
-  }
-
-  &.Input--iconTrailing {
-    padding-right: 2.5rem !important;
-  }
-
   &--textarea {
     max-width: 100%;
     min-height: 8rem;
     padding: 1rem;
-  }
-
-  &.Input--size--sm {
-    font-size: 0.875rem;
-    padding: 0.25rem 0.75rem;
-  }
-
-  &.Input--size--lg {
-    font-size: 1.125rem;
-    padding: 0.75rem 1.25rem;
   }
 }
 
@@ -55,63 +32,41 @@
   &.Input__container--fluid {
     width: 100%;
   }
-
-  .material-icons {
-    display: block;
-  }
-
-  .iconLeading {
-    font-size: 1.25rem;
-    left: 0;
-    margin: 0;
-    position: absolute;
-    top: 50%;
-    transform: translate(50%, -50%);
-  }
-
-  .iconTrailing {
-    font-size: 1.25rem;
-    margin: 0;
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translate(-50%, -50%);
-  }
 }
 
 .Input {
   @include input-base;
 
   &:hover {
-    border: 2px solid $gray;
+    border: 2px solid black;
   }
 
   &:focus,
   &:active {
-    border: 2px solid $primary-9;
+    border: 2px solid red;
   }
 
   &:invalid {
-    border: 2px solid $oc-red-9;
+    border: 2px solid red;
   }
 }
 
 .Input--filled {
   @include input-base;
-  background: $oc-gray-1;
+  background: red;
 
   &:hover {
-    background: $oc-gray-3;
-    border: 2px solid $gray;
+    background: red;
+    border: 2px solid red;
   }
 
   &:focus,
   &:active {
-    background: $oc-gray-3;
-    border: 2px solid $primary-9;
+    background: red;
+    border: 2px solid red;
   }
 
   &:invalid {
-    border: 2px solid $oc-red-9;
+    border: 2px solid red;
   }
 }
