@@ -6,8 +6,6 @@
   position: relative;
 }
 
-// shadow
-
 .shadow {
   &-none {
     box-shadow: none;
@@ -23,15 +21,11 @@
   }
 }
 
-// image
-
 .image {
   &-invert {
     filter: invert(1);
   }
 }
-
-// text
 
 $text-sizes: (
   'xxs': 0.625rem,
@@ -90,8 +84,6 @@ $text-weights: (
   }
 }
 
-// Flexbox
-
 .flex {
   display: flex;
 
@@ -104,8 +96,6 @@ $text-weights: (
   }
 }
 
-// Align
-
 .align {
   &-center {
     align-items: center;
@@ -117,8 +107,6 @@ $text-weights: (
     align-items: flex-end;
   }
 }
-
-// Justify
 
 .justify {
   &-center {
@@ -141,23 +129,17 @@ $text-weights: (
   }
 }
 
-// flex 1-12
-
 @for $i from 1 through 12 {
   .flex-#{$i} {
     flex: $i;
   }
 }
 
-// gap 1-12
-
 @for $i from 1 through 12 {
   .gap-#{$i} {
     gap: $i * 0.25rem;
   }
 }
-
-// padding 0-12
 
 @for $i from 0 through 12 {
   .pt-#{$i} {
@@ -184,8 +166,6 @@ $text-weights: (
     padding: $i * 0.25rem;
   }
 }
-
-// margin 0-12
 
 @for $i from 0 through 12 {
   .mt-#{$i} {

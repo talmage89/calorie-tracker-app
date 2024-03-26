@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import { JSX, splitProps } from 'solid-js';
+import clsx from 'clsx';
 import './Input.scss';
 
 export type InputProps = JSX.InputHTMLAttributes<HTMLInputElement> & {

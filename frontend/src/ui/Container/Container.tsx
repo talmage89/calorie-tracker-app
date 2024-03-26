@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import { JSX, splitProps } from 'solid-js';
+import clsx from 'clsx';
 import './Container.scss';
 
 export type ContainerProps = JSX.HTMLAttributes<HTMLDivElement> & {};

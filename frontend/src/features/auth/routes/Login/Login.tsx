@@ -1,9 +1,9 @@
 import { createSignal } from 'solid-js';
 import { useNavigate } from '@solidjs/router';
 import { http } from '~/http';
+import { Container } from '~/ui';
 import { setUser } from '../../services/UserService';
 import { LoginForm } from '../../components';
-import { Container } from '~/ui';
 import './Login.scss';
 
 export const Login = () => {

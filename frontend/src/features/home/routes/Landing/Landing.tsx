@@ -1,6 +1,6 @@
+import { useNavigate } from '@solidjs/router';
 import { Button, Container } from '~/ui';
 import './Landing.scss';
-import { useNavigate } from '@solidjs/router';
 
 export const Landing = () => {
   const navigate = useNavigate();

@@ -4,8 +4,8 @@ import { user } from '~/features/auth/services/UserService';
 import { Button, Container } from '~/ui';
 import { DayModel, EntryModel } from '../../api';
 import { Day } from '../../types';
-import './Home.scss';
 import { AddEntryModal } from '../..';
+import './Home.scss';
 
 export function Home() {
   const [day, setDay] = createSignal<Day>();

@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import { JSX, mergeProps, splitProps } from 'solid-js';
+import clsx from 'clsx';
 import './Button.scss';
 
 export type ButtonVariant = 'default' | 'raised' | 'outlined';

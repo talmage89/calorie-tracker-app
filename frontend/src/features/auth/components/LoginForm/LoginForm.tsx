@@ -1,6 +1,6 @@
 import { createSignal } from 'solid-js';
-import './LoginForm.scss';
 import { Button, Input } from '~/ui';
+import './LoginForm.scss';
 
 type LoginFormProps = {
   onSubmit: (data: LoginFormData) => void;

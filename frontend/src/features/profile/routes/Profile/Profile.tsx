@@ -1,10 +1,10 @@
 import { createEffect, createSignal } from 'solid-js';
 import { useNavigate } from '@solidjs/router';
 import { setUser, user } from '~/features/auth/services/UserService';
+import { UserModel } from '~/features/auth/api';
 import { Button, Container, Input } from '~/ui';
 import { ProfileModel } from '../../api';
 import './Profile.scss';
-import { UserModel } from '~/features/auth/api';
 
 type ProfileForm = {
   name: string;
@@ -38,13 +38,13 @@ export const Profile = () => {
   function handleSubmit(e: SubmitEvent) {
     e.preventDefault();
     !user()?.profile
-      ? ProfileModel.create({ ...form(), user: user()?.id }).then((res) => {
+      ? ProfileModel.create({ ...form(), user: user()?.id }).then(() => {
           UserModel.get(user()?.id as string).then((res) => {
             setUser(res.data);
             navigate('/');
           });
         })
-      : ProfileModel.update(user()?.profile?.id as string, form()).then((res) => {
+      : ProfileModel.update(user()?.profile?.id as string, form()).then(() => {
           UserModel.get(user()?.id as string).then((res) => {
             setUser(res.data);
             navigate('/');
