@@ -1,0 +1,25 @@
+@import 'src/scss/variables.scss';
+
+.SignUp {
+  width: 100%;
+  flex-grow: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  &__content {
+    position: absolute;
+    top: 100px;
+    border: 1px solid $gray-100;
+    border-radius: 4px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    &__error {
+      color: $primary-red;
+    }
+  }
+}

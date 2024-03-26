@@ -2,14 +2,11 @@
 
 .Navbar {
   width: 100%;
-  padding: 1rem 0;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem 2rem;
   z-index: 100;
-
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-
+  justify-content: center;
+  
   &__container {
     display: flex;
     justify-content: space-between;
@@ -17,15 +14,20 @@
   }
 
   &__logo {
-    a {
-      color: $brown-500;
-      font-weight: bold;
-      font-size: 3rem;
-      text-decoration: none;
-      font-family: "Madimi One", sans-serif;
-    }
+    color: $black;
+    font-weight: bold;
+    font-size: 2.5rem;
+    text-decoration: none;
+    font-family: 'Madimi One', sans-serif !important;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
   }
 
   &__links {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 }

@@ -2,7 +2,7 @@
 
 @mixin input-base {
   background: transparent;
-  border: 2px solid $gray-300;
+  border: 2px solid $gray-200;
   border-radius: 4px;
   font-size: 1rem;
   outline: none;
@@ -38,35 +38,35 @@
   @include input-base;
 
   &:hover {
-    border: 2px solid black;
+    border: 2px solid $gray-400;
   }
 
   &:focus,
   &:active {
-    border: 2px solid red;
+    border: 2px solid rgba($primary-blue, 0.8);
   }
 
   &:invalid {
-    border: 2px solid red;
+    border: 2px solid $primary-red;
   }
 }
 
-.Input--filled {
-  @include input-base;
-  background: red;
+// .Input--filled {
+//   @include input-base;
+//   background: red;
 
-  &:hover {
-    background: red;
-    border: 2px solid red;
-  }
+//   &:hover {
+//     background: red;
+//     border: 2px solid red;
+//   }
 
-  &:focus,
-  &:active {
-    background: red;
-    border: 2px solid red;
-  }
+//   &:focus,
+//   &:active {
+//     background: red;
+//     border: 2px solid red;
+//   }
 
-  &:invalid {
-    border: 2px solid red;
-  }
-}
+//   &:invalid {
+//     border: 2px solid red;
+//   }
+// }

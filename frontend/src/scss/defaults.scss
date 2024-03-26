@@ -1,3 +1,5 @@
+@import 'src/scss/variables.scss';
+
 /*
 * This file contains css resets for default browser styles.
 * Changes here can affect the entire application, so be careful when making changes.
@@ -56,6 +58,14 @@ img {
 /* remove underline from a tags */
 a {
   text-decoration: none;
+
+  &:active {
+    color: $primary-blue;
+  }
+
+  &:visited {
+    color: $primary-blue;
+  }
 }
 
 /* remove default bullet point or numbers from lists */
@@ -99,7 +109,7 @@ iframe {
 
 .Button {
   color: white;
-  background-color: rgba(255, 255, 255, 0.209);;
+  background-color: rgba(255, 255, 255, 0.209);
   font-weight: bold;
   padding: 0.75rem 2rem;
   border-radius: 100px;

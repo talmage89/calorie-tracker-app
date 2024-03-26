@@ -54,8 +54,8 @@ export const Profile = () => {
 
   function renderInput(label: string, type: string, name: keyof ProfileForm, placeholder?: string) {
     return (
-      <div class="Profile__input">
-        <label>{label}</label>
+      <div class="Profile__form__input">
+        <p>{label}</p>
         <Input
           fluid
           placeholder={placeholder}
@@ -70,21 +70,27 @@ export const Profile = () => {
   return (
     <div class="Profile">
       <Container class="Profile__container">
-        <form onSubmit={(e) => handleSubmit(e)} class="Profile__form">
+        <form onSubmit={(e) => handleSubmit(e)} class="Profile__form shadow-sm">
           <h2>Profile</h2>
-          {!user()?.profile && <p class="Profile__errorText">Please complete your profile before continuing.</p>}
-          <div class="Profile__inputs">
+          <div class="Profile__form__inputs">
             {renderInput('Name', 'text', 'name', 'Your name')}
-            <div class="Profile__inputs__grid">
-              {renderInput('Weight', 'number', 'weight')}
-              {renderInput('Weight Goal', 'number', 'weight_goal')}
-              {renderInput('Calorie Goal', 'number', 'calorie_goal')}
-              {renderInput('Protein Goal', 'number', 'protein_goal')}
-              {renderInput('Carb Goal', 'number', 'carb_goal')}
-              {renderInput('Fat Goal', 'number', 'fat_goal')}
+            <div class="Profile__form__inputs__grid">
+              {renderInput('Weight (lbs)', 'number', 'weight')}
+              {renderInput('Weight goal (lbs)', 'number', 'weight_goal')}
+              {renderInput('Daily calorie goal', 'number', 'calorie_goal')}
+              {renderInput('Daily protein goal (g)', 'number', 'protein_goal')}
+              {renderInput('Daily carb goal (g)', 'number', 'carb_goal')}
+              {renderInput('Daily fat goal (g)', 'number', 'fat_goal')}
             </div>
           </div>
-          <Button type="submit" variant="raised" class="Profile__submitButton">
+          {!user()?.profile && (
+            <p class="Profile__errorText">
+              Please complete your profile before continuing.
+              <br />
+              Most fields can be left blank.
+            </p>
+          )}
+          <Button rounded emphasized type="submit" variant="raised" class="Profile__submitButton">
             Save
           </Button>
         </form>

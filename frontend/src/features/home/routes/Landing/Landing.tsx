@@ -1,14 +1,18 @@
-import { A } from "@solidjs/router";
+import { Button, Container } from '~/ui';
+import './Landing.scss';
+import { useNavigate } from '@solidjs/router';
 
 export const Landing = () => {
+  const navigate = useNavigate();
+
   return (
-    <div class="Home__unauthed">
-      <h1>Welcome to Macro Tracko</h1>
-      <p>Macro Tracko is a simple app to track your macronutrient intake.</p>
-      <p>It's free and always will be.</p>
-      <A href="/sign-up">Sign Up</A>
-      <p>or</p>
-      <A href="/login">Login</A>
-    </div>
+    <Container class="Landing">
+      <span class='Landing__content'>
+        <p class="Landing__content__header">Join The Club</p>
+        <Button variant="raised" emphasized rounded onClick={() => navigate('/sign-up')}>
+          SIGN UP
+        </Button>
+      </span>
+    </Container>
   );
 };

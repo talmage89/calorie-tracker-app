@@ -3,12 +3,11 @@ import { JSX, splitProps } from 'solid-js';
 import './Input.scss';
 
 export type InputProps = JSX.InputHTMLAttributes<HTMLInputElement> & {
-  filled?: boolean;
   fluid?: boolean;
 };
 
 export const Input = (props: InputProps) => {
-  const [local, rest] = splitProps(props, ['class', 'filled', 'fluid']);
+  const [local, rest] = splitProps(props, ['class', 'fluid']);
 
   return (
     <div
@@ -18,9 +17,8 @@ export const Input = (props: InputProps) => {
     >
       <input
         class={clsx(
+          'Input',
           {
-            'Input': !local.filled,
-            'Input--filled': local.filled,
             'Input--fluid': local.fluid,
           },
           local.class,

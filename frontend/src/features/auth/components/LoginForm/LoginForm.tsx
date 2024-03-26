@@ -1,8 +1,10 @@
 import { createSignal } from 'solid-js';
+import './LoginForm.scss';
+import { Button, Input } from '~/ui';
 
 type LoginFormProps = {
   onSubmit: (data: LoginFormData) => void;
-}
+};
 
 export type LoginFormData = {
   email: string;
@@ -21,37 +23,32 @@ export const LoginForm = (props: LoginFormProps) => {
   }
 
   return (
-    <>
-      <form onSubmit={onSubmit}>
-        <input
+    <form onSubmit={onSubmit} class="LoginForm">
+      <div class="LoginForm__input">
+        <p>Email Address</p>
+        <Input
+          fluid
           name="email"
-          onChange={(e) => {
-            setForm({
-              ...form(),
-              email: e.target.value,
-            });
-          }}
           placeholder="email"
           type="email"
           value={form().email}
+          onChange={(e) => setForm({ ...form(), email: e.target.value })}
         />
-        <input
-          class="mt-4"
+      </div>
+      <div class="LoginForm__input">
+        <p>Password</p>
+        <Input
           name="password"
-          onChange={(e) => {
-            setForm({
-              ...form(),
-              password: e.target.value,
-            });
-          }}
+          fluid
           placeholder="Password"
           type="password"
           value={form().password}
+          onChange={(e) => setForm({ ...form(), password: e.target.value })}
         />
-        <button class="mt-4" disabled={!form().email || !form().password} type="submit">
-          Submit
-        </button>
-      </form>
-    </>
+      </div>
+      <Button fluid static variant="raised" class="mt-4" disabled={!form().email || !form().password} type="submit">
+        Continue
+      </Button>
+    </form>
   );
 };

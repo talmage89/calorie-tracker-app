@@ -6,7 +6,7 @@ import './App.scss';
 
 export const PageWrapper = (props: any) => {
   return (
-    <div>
+    <div class='App'>
       <Navbar />
       {props.children}
     </div>

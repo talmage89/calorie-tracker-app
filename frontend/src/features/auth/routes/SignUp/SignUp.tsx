@@ -1,8 +1,10 @@
 import { createSignal } from 'solid-js';
-import { A, useNavigate } from '@solidjs/router';
-import { LoginForm } from '../../components';
+import { useNavigate } from '@solidjs/router';
 import { http } from '~/http';
+import { Container } from '~/ui';
 import { setUser } from '../../services/UserService';
+import { LoginForm } from '../../components';
+import './SignUp.scss';
 
 export const SignUp = () => {
   const navigate = useNavigate();
@@ -23,21 +25,23 @@ export const SignUp = () => {
 
   return (
     <>
-      <div class="centerPage">
-        <h1 class="text-center">Sign up</h1>
-        <LoginForm
-          onSubmit={(data) => {
-            http
-              .post('/api/users/', data)
-              .then(() => getToken({ ...data, username: data.email }).then(() => navigate('/')))
-              .catch((err) => setError(err.response.data.non_field_errors[0]));
-          }}
-        />
-        {error() && <p>{error()}</p>}
-        <p class="mt-8">
-          Already have an account? <A href="/login">Log In</A>
-        </p>
-      </div>
+      <Container class="SignUp">
+        <div class="SignUp__content shadow-sm">
+          <h2>Create an account</h2>
+          <LoginForm
+            onSubmit={(data) => {
+              http
+                .post('/api/users/', data)
+                .then(() => getToken({ ...data, username: data.email }).then(() => navigate('/')))
+                .catch((err) => setError(err.response.data.non_field_errors[0]));
+            }}
+          />
+          {error() && <p class='SignUp__content__error'>{error()}</p>}
+          <p>
+            Already have an account? <a href="/login">Log In</a>
+          </p>
+        </div>
+      </Container>
     </>
   );
 };

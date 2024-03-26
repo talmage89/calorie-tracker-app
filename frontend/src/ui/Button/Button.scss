@@ -5,15 +5,16 @@
   background-color: transparent;
   border: none;
   border-radius: 4px;
-  color: $gray-800;
-  cursor: pointer;
+  color: $black;
   display: inline-block;
-  font-size: 1rem;
-  padding: 0.5rem 1rem;
+  font-size: 14px;
+  padding: 12px 48px;
   position: relative;
   text-align: center;
   text-decoration: none !important;
-  transition: all 0.1s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  transform: scale(0.99);
+  cursor: pointer;
 
   &:disabled {
     cursor: not-allowed;
@@ -28,7 +29,24 @@
   }
 
   &.Button--rounded {
-    border-radius: 2rem !important;
+    border-radius: 4rem !important;
+  }
+
+  &.Button--emphasized {
+    font-weight: bold;
+    padding: 14px 64px;
+    letter-spacing: 1px;
+  }
+
+  &.Button--static {
+    transform: none !important;
+  }
+
+  &:hover {
+    &:not(:disabled) {
+      transform: scale(1.02);
+    }
+    
   }
 }
 
@@ -38,15 +56,15 @@
   @include button-base;
 
   &:hover {
-    background-color: gray;
+    // background-color: gray;
   }
 
   &:active {
-    background-color: gray;
+    // background-color: gray;
   }
 
   &:disabled {
-    color: gray !important;
+    color: $gray-600 !important;
 
     &:hover {
       background-color: transparent !important;
@@ -62,15 +80,16 @@
 .Button--variant--outlined {
   @include button-base;
   background-color: transparent;
-  border: 1px solid gray;
-  color: gray;
+  border: 2px solid $black;
+  color: $black;
 
   &:hover {
-    background-color: gray;
+    background-color: $black;
+    color: $white;
   }
-
+  
   &:active {
-    background-color: gray;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.25);
   }
 
   &:disabled {
@@ -90,8 +109,9 @@
 
 .Button--variant--raised {
   @include button-base;
-  background-color: #8D4F3F;
+  background-color: $black;
   color: white;
+  border: 2px solid $black;
 
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25);
 
@@ -100,8 +120,9 @@
   }
 
   &:disabled {
-    background-color: gray !important;
-    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.25) !important;
+    background-color: $gray-200 !important;
+    border: 2px solid $gray-200 !important;
+    box-shadow: none !important;
     color: gray !important;
   }
 }

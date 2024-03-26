@@ -7,12 +7,8 @@ body {
   padding: 0;
 }
 
-hr {
-  border: none;
-  margin: 0.5rem 0;
-}
-
-.centerPage {
-  max-width: 320px;
-  margin: 3rem auto 1rem;
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }

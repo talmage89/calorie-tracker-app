@@ -1,11 +1,11 @@
-// General typographic rules
+@import 'src/scss/variables.scss';
+
 html,
 body {
-  color: black;
-  font-size: 16px; // If you change this value, you'll want to change the $rem-base variable in functions.scss
-  line-height: 1.5;
-  font-family: "Noto Sans KR", sans-serif;
-  font-optical-sizing: auto;
+  color: $black;
+  font-size: 16px;
+  line-height: 1.25;
+  font-family: "Mukta", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
